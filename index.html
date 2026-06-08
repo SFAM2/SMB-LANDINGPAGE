@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Say My Brand â€” Ambassador Marketing Platform</title>
+  <title>Say My Brand — Ambassador Marketing Platform</title>
   <meta name="description" content="The all-in-one platform to recruit, activate, and measure your brand ambassadors. Turn your community into your best sales channel.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -43,23 +44,18 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: var(--font-b);
-      background: #020202;
+      background: #fff;
       color: #fff;
       -webkit-font-smoothing: antialiased;
       line-height: 1.6;
-      padding: 2rem 2rem 2rem;
+      padding: 0rem 6rem 0rem;
     }
 
-    /* Page wrapper â€” full rounded card floating on body */
+    /* Page wrapper — full rounded card floating on body */
     .pw {
       max-width: 1500px;
       margin: 0 auto;
       background: var(--dark);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.08),
-        0 80px 180px rgba(0,0,0,0.95),
-        0 0 120px rgba(204,255,0,0.03);
-      border-radius: 3rem;
       overflow: clip;
     }
 
@@ -89,7 +85,7 @@
     .btn {
       display: inline-flex; align-items: center; gap: .5rem;
       font-family: var(--font-b); font-weight: 600; font-size: .9rem;
-      padding: .7rem 1.6rem; border-radius: 100px;
+      padding: .7rem 1.6rem; border-radius: 0;
       text-decoration: none; border: none; cursor: pointer;
       transition: all .22s ease; position: relative; overflow: hidden;
     }
@@ -100,13 +96,15 @@
     .btn-ghost-dark { background: transparent; color: rgba(0,0,0,.65); border: 1px solid rgba(0,0,0,.15); }
     .btn-ghost-dark:hover { color: #000; border-color: rgba(0,0,0,.3); background: rgba(0,0,0,.05); }
     .btn-lg { padding: 1rem 2.4rem; font-size: 1rem; }
+    .btn svg { transition: transform .28s ease; }
+    .btn:hover svg { transform: translateX(4px); }
 
     /* ===== TAG / LABEL ===== */
     .tag {
       display: inline-flex; align-items: center; gap: .4rem;
       font-family: monospace; font-size: .68rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: .12em;
-      padding: .3rem .8rem; border-radius: 100px;
+      padding: .3rem .8rem; border-radius: 0;
       margin-bottom: 1.5rem;
     }
     .tag-lime { color: var(--lime); background: var(--lime-dim); border: 1px solid var(--lime-border); }
@@ -118,9 +116,16 @@
       font-size: clamp(2.2rem, 4.5vw, 3.75rem);
       letter-spacing: -.03em; line-height: 1.02;
     }
-    .st .acc { font-style: italic; color: var(--lime); }
+    .st .acc { font-style: italic; }
     .st-dark { color: #000; }
-    .st-dark .acc { color: #166534; font-style: italic; }
+    .st-dark .acc { font-style: italic; }
+    .acc {
+      background: linear-gradient(135deg, #64B5F6, #42A5F5);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      font-style: italic;
+      filter: drop-shadow(0 2px 10px rgba(66,165,245,.4));
+    }
     .ss { font-size: 1.05rem; color: var(--muted); font-weight: 300; line-height: 1.75; margin-top: 1.1rem; }
     .ss-dark { color: rgba(0,0,0,.5); }
 
@@ -153,12 +158,12 @@
     .nav-pill {
       display: flex; align-items: center; gap: .2rem;
       background: rgba(255,255,255,.04); border: 1px solid var(--border);
-      border-radius: 100px; padding: .3rem .4rem;
+      border-radius: 0; padding: .3rem .4rem;
     }
     .nav-pill a {
       text-decoration: none; color: rgba(255,255,255,.6);
       font-size: .85rem; font-weight: 500;
-      padding: .38rem 1rem; border-radius: 100px;
+      padding: .38rem 1rem; border-radius: 0;
       transition: all .18s;
     }
     .nav-pill a:hover { color: #fff; background: rgba(255,255,255,.07); }
@@ -169,12 +174,12 @@
       color: var(--lime); text-transform: uppercase; letter-spacing: .1em;
     }
     .nav-dot {
-      width: 6px; height: 6px; border-radius: 50%;
+      width: 6px; height: 6px; border-radius: 0;
       background: var(--lime);
       animation: blink 2s ease-in-out infinite;
     }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.4} }
-    .nav-mob { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; padding: .45rem; cursor: pointer; color: #fff; }
+    .nav-mob { display: none; background: none; border: 1px solid var(--border); border-radius: 0; padding: .45rem; cursor: pointer; color: #fff; }
 
     /* ============================================================
        HERO
@@ -185,12 +190,16 @@
         position: relative; overflow: hidden;
         padding: 7rem 2.5rem 5rem;
         background-color: #e5ff00;
-      }
+        background-image: url(https://saymybrand.com/wp-content/uploads/2024/06/bg-shape.webp);
+        background-position: top right;
+        background-repeat: no-repeat; 
+}
+    
       @keyframes drift { 0%,100%{transform:translate(0,0)} 50%{transform:translate(28px,18px)} }
 
     .hero-in {
       max-width: 1280px; margin: 0 auto; width: 100%;
-      display: grid; grid-template-columns: 7fr 5fr;
+      display: grid; grid-template-columns: 8fr 4fr;
       gap: 4rem; align-items: center; position: relative; z-index: 1;
     }
       .hero-eyebrow {
@@ -199,7 +208,7 @@
         text-transform: uppercase; letter-spacing: .12em;
         color: #000; background: rgba(0,0,0,.1);
         border: 1px solid rgba(0,0,0,.2);
-        padding: .3rem .8rem; border-radius: 100px;
+        padding: .3rem .8rem; border-radius: 0;
         margin-bottom: 1.75rem;
       }
       .hero-h1 {
@@ -208,7 +217,7 @@
         line-height: .92; letter-spacing: -.035em; color: #000;
         margin-bottom: 1.75rem;
       }
-      .hero-h1 .acc { font-style: italic; color: #000; }
+      .hero-h1 .acc { font-style: italic; }
       .hero-sub {
         font-size: 1.12rem; color: rgba(0,0,0,.65);
         font-weight: 300; line-height: 1.72;
@@ -230,7 +239,7 @@
       .btn-dark {
         background: #000; color: #e5ff00;
         font-family: var(--font-b); font-size: .88rem; font-weight: 700;
-        padding: .7rem 1.75rem; border-radius: 100px; border: none;
+        padding: .7rem 1.75rem; border-radius: 0; border: none;
         text-decoration: none; display: inline-flex; align-items: center; gap: .45rem;
         transition: background .2s ease; cursor: pointer;
       }
@@ -241,7 +250,7 @@
         border: 1.5px solid rgba(0,0,0,.35);
         color: rgba(0,0,0,.82);
         font-family: var(--font-b); font-size: .88rem; font-weight: 600;
-        padding: .7rem 1.5rem; border-radius: 100px;
+        padding: .7rem 1.5rem; border-radius: 0;
         text-decoration: none; display: inline-flex; align-items: center; gap: .4rem;
         transition: all .2s ease; cursor: pointer;
       }
@@ -277,70 +286,53 @@
      /* Hero visual */
     .hero-vis { position: relative; }
     .hero-card {
-      background: var(--dark-2); border: 1px solid var(--border);
-      border-radius: 1.5rem; overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.04);
-      cursor: pointer; position: relative;
+      background: var(--dark-2); 
+      border-radius: 0;
+     
+      position: relative;
     }
     .hero-card img, .hero-card video { width: 100%; display: block; }
-    .hero-card-play {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(0,0,0,.18);
-      opacity: 0; transition: opacity .25s;
-    }
-    .hero-card:hover .hero-card-play { opacity: 1; }
-    .hero-card-play-btn {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: rgba(255,255,255,.18); border: 2px solid rgba(255,255,255,.7);
-      backdrop-filter: blur(10px);
-      display: flex; align-items: center; justify-content: center;
-      transition: transform .2s, background .2s;
-    }
-    .hero-card:hover .hero-card-play-btn { transform: scale(1.08); background: rgba(255,255,255,.28); }
-    /* Video lightbox */
-    .vid-modal {
-      display: none; position: fixed; inset: 0; z-index: 9999;
-      background: rgba(0,0,0,.88); align-items: center; justify-content: center;
-      backdrop-filter: blur(10px);
-    }
-    .vid-modal.open { display: flex; }
-    .vid-modal-inner {
-      position: relative; width: 90vw; max-width: 1100px;
-      border-radius: 1.5rem; overflow: hidden;
-      box-shadow: 0 40px 120px rgba(0,0,0,.9);
-    }
-    .vid-modal video { width: 100%; display: block; background: #000; }
-    .vid-close {
-      position: absolute; top: -18px; right: -18px;
-      width: 42px; height: 42px; border-radius: 50%;
-      background: #fff; color: #000; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem; font-weight: 700; z-index: 10;
-      box-shadow: 0 4px 20px rgba(0,0,0,.4); transition: transform .2s;
-    }
-    .vid-close:hover { transform: scale(1.12); }
+    
     .hpill {
       position: absolute; z-index: 10;
-      background: rgba(255,255,255,.13);
-      border: 1px solid rgba(255,255,255,.28);
-      border-radius: 100px; padding: .6rem 1.35rem;
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 0; padding: .6rem 1.35rem;
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
       display: flex; align-items: center; gap: .55rem;
-      box-shadow: 0 8px 32px rgba(0,0,0,.28);
+      box-shadow: 0 8px 32px rgba(0,0,0,.35);
+      transition: opacity .35s ease;
     }
     .hpill .v { font-family: var(--font-d); font-weight: 900; font-size: 1.2rem; color: #fff; }
-    .hpill .l { font-size: .72rem; color: rgba(255,255,255,.65); }
-    .hpill-1 { top: 1.5rem; right: -1.2rem; }
+    .hpill .l { font-size: .72rem; color: rgba(255,255,255,.7); }
+    .hpill-1 { top: 1rem; right: -2.2rem; }
     .hpill-2 { bottom: 2rem; left: -1.2rem; }
+    .hpill-arrow {
+      position: absolute; z-index: 10;
+      bottom: -0.5rem; left: -3.5rem;
+      display: flex; flex-direction: column; align-items: flex-start;
+      pointer-events: none;
+    }
+    .hpill-arrow-svg {
+      width: 130px; height: auto;
+      display: block;
+      transform: scaleX(-1);
+    }
+    .hpill-arrow-txt {
+      font-family: var(--font-b); font-weight: 600;
+      font-size: .72rem; line-height: 1.3;
+      color: rgba(0,0,0,.75);
+      margin-top: -2px; margin-left: 4px;
+      text-align: left;
+    }
 
     /* ============================================================
        LOGOS BAR
     ============================================================ */
     #logos {
       background: var(--light);
-      border-radius: 3rem 3rem 0 0;
+      border-radius: 0;
       margin-top: -2.5rem;
       padding: 3.5rem 2.5rem;
       position: relative; z-index: 2;
@@ -371,7 +363,7 @@
       font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
       color: rgba(0,0,0,.22);
       border: 1px solid rgba(0,0,0,.1);
-      border-radius: 6px; padding: .35rem .9rem;
+      border-radius: 0; padding: .35rem .9rem;
       user-select: none;
     }
      .logo-txt-dark {
@@ -382,32 +374,31 @@
     /* ============================================================
        KPIS
     ============================================================ */
-     #kpis {
-       background: var(--dark);
-       padding: 6rem 2.5rem;
-       position: relative; overflow: hidden;
-       border-radius: 3rem 3rem 0 0;
-       margin-top: -3rem;
-       z-index: 2;
-     }
-    .kpis-in { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
-    .kpis-hd { text-align: center; margin-bottom: 4rem; }
+      #kpis {
+        background: var(--dark);
+        padding: 1.75rem 2rem;
+        position: relative; overflow: hidden;
+        margin-top: -3rem;
+        z-index: 2;
+      }
+    .kpis-in { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .kpis-hd { text-align: center; margin-bottom: 1.25rem; }
     .kpis-grid {
       display: grid; grid-template-columns: repeat(4,1fr);
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); border-radius: 1.5rem; overflow: hidden;
+      gap: 1rem;
     }
     .kpi {
-      background: var(--dark-2); padding: 2.5rem 2rem; text-align: center;
+      background: var(--dark-2); padding: .75rem .75rem; text-align: center;
       transition: background .2s;
+      border: 2px solid rgb(204 255 0 / 42%); border-radius: 0;
     }
     .kpi:hover { background: var(--dark-3); }
     .kpi-v {
       font-family: var(--font-d); font-weight: 900;
-      font-size: clamp(2.5rem, 5vw, 4.2rem);
-      color: var(--lime); letter-spacing: -.04em; line-height: 1; margin-bottom: .5rem;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--lime); letter-spacing: -.04em; line-height: 1; margin-bottom: .25rem;
     }
-    .kpi-l { font-size: .88rem; color: var(--muted); }
+    .kpi-l { font-size: .7rem; color: var(--muted); }
 
     /* ============================================================
        BEFORE / AFTER
@@ -419,7 +410,7 @@
     .prob-hd { text-align: center; margin-bottom: 4rem; }
     .prob-hd p { margin-top: .9rem; font-size: 1.02rem; color: rgba(0,0,0,.48); }
     .prob-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .prob-card { border-radius: 1.75rem; padding: 2.5rem; }
+    .prob-card { border-radius: 0; padding: 2.5rem; }
     .prob-bad { background: rgba(0,0,0,.04); border: 1px solid rgba(0,0,0,.08); }
     .prob-good { background: #000; border: 1px solid rgba(255,255,255,.06); }
     .prob-cl {
@@ -442,7 +433,7 @@
     .ic { flex-shrink: 0; width: 20px; height: 20px; margin-top: 2px; }
 
     /* ============================================================
-       SOLUTION â€” 3-in-1
+       SOLUTION — 3-in-1
     ============================================================ */
     #solution {
       background: var(--dark); padding: 7rem 2.5rem;
@@ -457,7 +448,7 @@
     }
     .bc {
       background: var(--dark-2); border: 1px solid var(--border);
-      border-radius: 1.75rem; overflow: hidden;
+      border-radius: 0; overflow: hidden;
       transition: border-color .28s;
     }
     .bc:hover { border-color: rgba(204,255,0,.25); }
@@ -466,7 +457,7 @@
     .bc-icon {
       width: 46px; height: 46px;
       background: var(--lime-dim); border: 1px solid var(--lime-border);
-      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      border-radius: 0; display: flex; align-items: center; justify-content: center;
       color: var(--lime); margin-bottom: 1.2rem;
     }
     .bc-t {
@@ -491,7 +482,7 @@
     ============================================================ */
     #features {
       background: var(--light);
-      border-radius: 3rem 3rem 0 0;
+      border-radius: 0;
       margin-top: -2.5rem;
       padding: 7rem 2.5rem;
       position: relative; z-index: 2;
@@ -499,18 +490,20 @@
     .feat-in { max-width: 1280px; margin: 0 auto; }
     .feat-hd { text-align: center; margin-bottom: 4rem; }
     .feat-grid {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      grid-template-rows: repeat(2,auto); gap: 1.25rem;
+      display: grid; grid-template-columns: repeat(12,1fr);
+      gap: 1.25rem;
     }
     .fc {
       background: #fff; border: 1px solid rgba(0,0,0,.08);
-      border-radius: 1.5rem; padding: 2rem;
+      border-radius: 0; padding: 2rem;
       transition: all .28s ease;
     }
     .fc:hover { border-color: rgba(0,0,0,.16); box-shadow: 0 8px 40px rgba(0,0,0,.07); transform: translateY(-2px); }
-    .fc-wide { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .fc-wide { grid-column: span 8; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .fc-30 { grid-column: span 4; }
+    .fc-25 { grid-column: span 3; }
     .fc-icon {
-      width: 42px; height: 42px; background: #000; border-radius: 10px;
+      width: 42px; height: 42px; background: #000; border-radius: 0;
       display: flex; align-items: center; justify-content: center;
       color: var(--lime); margin-bottom: 1rem;
     }
@@ -518,75 +511,27 @@
     .fc-d { font-size: .85rem; color: rgba(0,0,0,.48); line-height: 1.6; }
     .fc-big { font-family: var(--font-d); font-weight: 900; font-size: 3.5rem; color: #000; letter-spacing: -.04em; line-height: 1; margin-bottom: .2rem; }
     .fc-bigl { font-family: monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: #166534; }
-    .fc-img img { width: 100%; border-radius: 1rem; }
+    .fc-img img { width: 100%; border-radius: 0; }
 
     /* ============================================================
        MOBILE APP
     ============================================================ */
     #app {
-      background: #e8e8e8;
-      border-radius: 3rem 3rem 0 0;
+      background: #fff;
+      background-image: url(https://saymybrand.com/wp-content/uploads/2024/10/bg-app-mobile.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      border-radius: 0;
       margin-top: -2.5rem;
       padding: 7rem 2.5rem;
       position: relative; overflow: hidden; z-index: 2;
     }
     .app-in {
-      max-width: 1280px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 6rem; align-items: center; position: relative; z-index: 1;
+      max-width: 960px; margin: 0 auto;
+      position: relative; z-index: 1;
     }
-    .app-txt .tag { margin-bottom: 1.5rem; }
-    .app-pts { display: flex; flex-direction: column; gap: 1.75rem; margin-top: 2.75rem; }
-    .apt { display: flex; gap: 1.25rem; align-items: flex-start; cursor: pointer; }
-    .apt-n {
-      flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
-      border: 1px solid rgba(0,0,0,.12);
-      display: flex; align-items: center; justify-content: center;
-      font-family: monospace; font-size: .8rem; font-weight: 700;
-      color: rgba(0,0,0,.35); background: transparent;
-      transition: background .25s, border-color .25s, color .25s;
-    }
-    .apt:hover .apt-n { background: #000; border-color: #000; color: var(--lime); }
-    .apt-t h4 {
-      font-family: var(--font-d); font-weight: 900; font-size: 1.05rem;
-      letter-spacing: -.02em; color: #000; margin-bottom: .3rem;
-    }
-    .apt-t p { font-size: .88rem; color: rgba(0,0,0,.52); line-height: 1.65; max-width: 380px; }
-
-    /* Image column */
-    .app-img-wrap {
-      position: relative;
-    }
-    .app-img-frame {
-      aspect-ratio: 3/4;
-      border-radius: 2.5rem;
-      overflow: hidden;
-      background: #000;
-      box-shadow: 0 40px 100px rgba(0,0,0,.22);
-    }
-    .app-img-frame img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: top center;
-      transition: transform .7s ease;
-    }
-    .app-img-frame:hover img { transform: scale(1.04); }
-    .app-glass {
-      position: absolute; bottom: 2rem; left: -2rem; right: 2rem;
-      background: rgba(255,255,255,.12);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 1.5rem; padding: 1.5rem 1.75rem;
-    }
-    .app-glass-stat {
-      font-family: var(--font-d); font-weight: 900;
-      font-size: 2.25rem; letter-spacing: -.04em;
-      color: #fff; line-height: 1; margin-bottom: .25rem;
-    }
-    .app-glass-lbl {
-      font-family: monospace; font-size: .67rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .1em;
-      color: rgba(255,255,255,.6);
+    .app-in img {
+      width: 100%; display: block;
     }
 
     /* ============================================================
@@ -594,7 +539,7 @@
     ============================================================ */
     #platform {
       background: var(--light);
-      border-radius: 3rem 3rem 0 0;
+      border-radius: 0;
       margin-top: -2.5rem;
       padding: 7rem 2.5rem;
       position: relative; z-index: 2;
@@ -603,7 +548,7 @@
     .plat-hd { text-align: center; margin-bottom: 3rem; }
     .plat-tabs { display: flex; justify-content: center; gap: .5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
     .tb {
-      padding: .58rem 1.2rem; border-radius: 100px;
+      padding: .58rem 1.2rem; border-radius: 0;
       border: 1px solid rgba(0,0,0,.1); background: transparent;
       font-size: .85rem; font-weight: 500; color: rgba(0,0,0,.48);
       cursor: pointer; transition: all .18s; font-family: var(--font-b);
@@ -612,10 +557,10 @@
     .tb.on { background: #000; color: var(--lime); border-color: #000; }
     .tab-p { display: none; text-align: center; }
     .tab-p.on { display: block; }
-    .tab-p img {
+    .tab-p img, .tab-p video {
       max-width: 860px; width: 100%; max-height: 480px;
       object-fit: contain; display: block; margin: 0 auto;
-      border-radius: 1.5rem;
+      border-radius: 0;
       border: 1px solid rgba(0,0,0,.08);
       box-shadow: 0 20px 60px rgba(0,0,0,.1);
     }
@@ -633,14 +578,14 @@
     .tes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
     .tc {
       background: var(--dark-2); border: 1px solid var(--border);
-      border-radius: 1.5rem; padding: 2rem; transition: border-color .28s;
+      border-radius: 0; padding: 2rem; transition: border-color .28s;
     }
     .tc:hover { border-color: rgba(204,255,0,.18); }
     .tc-stars { display: flex; gap: 3px; margin-bottom: 1.2rem; color: var(--lime); }
     .tc-q { font-size: .97rem; line-height: 1.68; color: rgba(255,255,255,.75); margin-bottom: 1.75rem; }
     .tc-auth { display: flex; align-items: center; gap: .75rem; }
     .tc-av {
-      width: 40px; height: 40px; border-radius: 50%;
+      width: 40px; height: 40px; border-radius: 0;
       background: var(--lime-dim); border: 1px solid var(--lime-border);
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-d); font-weight: 900; font-size: .88rem; color: var(--lime);
@@ -661,7 +606,7 @@
     .pr-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
     .pc {
       background: var(--dark-2); border: 1px solid var(--border);
-      border-radius: 1.75rem; padding: 2.5rem;
+      border-radius: 0; padding: 2.5rem;
       transition: all .28s; position: relative;
     }
     .pc:hover { border-color: rgba(204,255,0,.2); transform: translateY(-4px); }
@@ -671,7 +616,7 @@
       background: var(--lime); color: #000;
       font-family: monospace; font-size: .62rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: .1em;
-      padding: .28rem 1rem; border-radius: 0 0 .75rem .75rem;
+      padding: .28rem 1rem; border-radius: 0;
     }
     .pc-tier { font-family: monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; color: var(--lime); margin-bottom: .4rem; }
     .pc-name { font-family: var(--font-d); font-weight: 900; font-size: 1.75rem; letter-spacing: -.02em; margin-bottom: .4rem; }
@@ -688,7 +633,7 @@
       position: relative; overflow: hidden; text-align: center;
     }
      .cta-founder {
-       width: 80px; height: 80px; border-radius: 50%;
+       width: 80px; height: 80px; border-radius: 0;
        overflow: hidden; margin: 0 auto 1.75rem;
        border: 2px solid var(--lime-border);
        box-shadow: 0 0 0 5px var(--lime-dim), 0 12px 36px rgba(0,0,0,.45);
@@ -697,7 +642,7 @@
 
      .cta-glow {
       position: absolute; width: 900px; height: 450px;
-      background: var(--lime); border-radius: 50%;
+      background: var(--lime); border-radius: 0;
       filter: blur(220px); opacity: .055;
       top: 50%; left: 50%; transform: translate(-50%,-50%);
       pointer-events: none;
@@ -708,7 +653,7 @@
       font-size: clamp(2.75rem, 5.5vw, 5.5rem);
       letter-spacing: -.035em; line-height: .93; color: #fff; margin-bottom: 1.5rem;
     }
-    .cta-h .acc { font-style: italic; color: var(--lime); }
+    .cta-h .acc { font-style: italic; }
     .cta-s { font-size: 1.08rem; color: var(--muted); margin-bottom: 3rem; line-height: 1.65; }
     .cta-acts { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
@@ -742,7 +687,7 @@
     .ft-legal { font-size: .73rem; color: rgba(255,255,255,.28); }
     .ft-soc { display: flex; gap: .75rem; }
     .soc-a {
-      width: 36px; height: 36px; border-radius: 50%;
+      width: 36px; height: 36px; border-radius: 0;
       border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
       color: rgba(255,255,255,.38); text-decoration: none; transition: all .2s;
     }
@@ -777,7 +722,7 @@
 
      .int-icon {
        flex-shrink: 0;
-       width: 64px; height: 64px; border-radius: 50%;
+       width: 64px; height: 64px; border-radius: 0;
        background: #fff;
        box-shadow: 0 4px 20px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.08);
        display: flex; align-items: center; justify-content: center;
@@ -809,7 +754,7 @@
     ============================================================ */
     #faq {
       background: var(--light);
-      border-radius: 3rem 3rem 0 0;
+      border-radius: 0;
       margin-top: -2.5rem;
       padding: 7rem 2.5rem;
       position: relative; z-index: 2;
@@ -819,7 +764,7 @@
     .faq-list { display: flex; flex-direction: column; gap: .75rem; }
     .fq {
       background: #fff; border: 1px solid rgba(0,0,0,.08);
-      border-radius: 1.25rem; overflow: hidden;
+      border-radius: 0; overflow: hidden;
       transition: border-color .22s;
     }
     .fq.open { border-color: rgba(0,0,0,.15); }
@@ -832,7 +777,7 @@
     }
     .fq-q:hover { color: #000; }
     .fq-icon {
-      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 0;
       background: rgba(0,0,0,.06); border: 1px solid rgba(0,0,0,.1);
       display: flex; align-items: center; justify-content: center;
       transition: transform .28s, background .22s;
@@ -857,8 +802,10 @@
       .hero-vis { display: none; }
       .bento { grid-template-columns: repeat(2,1fr); }
       .bc-span2 { grid-column: span 2; }
-      .feat-grid { grid-template-columns: repeat(2,1fr); }
-      .fc-wide { grid-column: span 2; }
+      .feat-grid { grid-template-columns: repeat(12,1fr); }
+      .fc-wide { grid-column: span 12; }
+      .fc-30 { grid-column: span 6; }
+      .fc-25 { grid-column: span 6; }
       .app-in { grid-template-columns: 1fr; }
       .app-img-wrap { display: none; }
       .tes-grid { grid-template-columns: repeat(2,1fr); }
@@ -872,11 +819,50 @@
       .nav-pill, .nav-live { display: none; }
       .nav-mob { display: flex; }
       .kpis-grid { grid-template-columns: repeat(2,1fr); }
-      .prob-grid, .bento, .feat-grid, .tes-grid { grid-template-columns: 1fr; }
-      .bc-span2, .fc-wide, .tes-grid .tc:last-child { grid-column: span 1; }
+      .prob-grid, .bento, .tes-grid { grid-template-columns: 1fr; }
+      .bc-span2, .tes-grid .tc:last-child { grid-column: span 1; }
+      .feat-grid { grid-template-columns: 1fr; }
+      .fc-wide, .fc-30, .fc-25 { grid-column: span 1; }
       .fc-wide { grid-template-columns: 1fr; }
       .ft-top { grid-template-columns: 1fr; }
       .ft-bot { flex-direction: column; text-align: center; }
+    }
+    /* ============================================================
+       SECTION CORNER BRACKETS
+    ============================================================ */
+    section { position: relative; }
+    section::before, footer::before {
+      content: ''; position: absolute; inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(to right, #000 0, #000 14px),
+        linear-gradient(to bottom, #000 0, #000 14px),
+        linear-gradient(to left, #000 0, #000 14px),
+        linear-gradient(to bottom, #000 0, #000 14px),
+        linear-gradient(to right, #000 0, #000 14px),
+        linear-gradient(to top, #000 0, #000 14px),
+        linear-gradient(to left, #000 0, #000 14px),
+        linear-gradient(to top, #000 0, #000 14px);
+      background-repeat: no-repeat;
+      background-size:
+        14px 2px, 2px 14px, 14px 2px, 2px 14px,
+        14px 2px, 2px 14px, 14px 2px, 2px 14px;
+      background-position:
+        top 14px left 14px, top 14px left 14px,
+        top 14px right 14px, top 14px right 14px,
+        bottom 14px left 14px, bottom 14px left 14px,
+        bottom 14px right 14px, bottom 14px right 14px;
+    }
+    #hero::before {
+      background-image:
+        linear-gradient(to right, #000 0, #000 14px),
+        linear-gradient(to bottom, #000 0, #000 14px),
+        linear-gradient(to left, #000 0, #000 14px),
+        linear-gradient(to bottom, #000 0, #000 14px),
+        linear-gradient(to right, #000 0, #000 14px),
+        linear-gradient(to top, #000 0, #000 14px),
+        linear-gradient(to left, #000 0, #000 14px),
+        linear-gradient(to top, #000 0, #000 14px);
     }
   </style>
 </head>
@@ -935,7 +921,7 @@
       </h1>
 
       <p class="hero-sub rv d2">
-        Say My Brand unifies ambassador recruitment, activation, commissions, and analytics in one powerful platform â€” so your brand grows through the people who genuinely love it.
+        Say My Brand unifies ambassador recruitment, activation, commissions, and analytics in one powerful platform — so your brand grows through the people who genuinely love it.
       </p>
 
       <div class="hero-acts rv d3">
@@ -946,32 +932,25 @@
         <a href="#solution" class="btn btn-ghost-dark btn-lg">See How It Works</a>
       </div>
 
-      <div class="hero-trust rv d4">
-        <div class="hero-trust-lbl">Trusted by 100+ premium brands</div>
-        <div class="hero-logos">
-          <span class="logo-txt logo-txt-dark">Brand Name</span>
-          <span class="logo-txt logo-txt-dark">Brand Name</span>
-          <span class="logo-txt logo-txt-dark">Brand Name</span>
-          <span class="logo-txt logo-txt-dark">Brand Name</span>
-        </div>
-      </div>
+
     </div>
 
     <div class="hero-vis rv d2">
-      <div class="hero-card" id="hero-card-trigger">
+      <div class="hero-card">
         <video autoplay muted loop playsinline>
-          <source src="assets/hero-video.mp4" type="video/mp4">
+          <source src="assets/VIDEO1.mp4" type="video/mp4">
         </video>
-        <div class="hero-card-play">
-          <div class="hero-card-play-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-          </div>
+        <div class="hpill hpill-1" id="live-feed-1">
+          <span class="v" id="live-val-1">$420</span><span class="l" id="live-lbl-1">sold just now</span>
         </div>
-        <div class="hpill hpill-1">
-          <span class="v">300%</span><span class="l">Avg. ROI</span>
+        <div class="hpill hpill-2" id="live-feed">
+          <span class="v" id="live-val">$420</span><span class="l" id="live-lbl">sold just now</span>
         </div>
-        <div class="hpill hpill-2">
-          <span class="v">100+</span><span class="l">Active Brands</span>
+        <div class="hpill-arrow">
+          <svg class="hpill-arrow-svg" viewBox="0 0 219 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.489 29.4305C36.9333 31.3498 51.3198 33.0559 65.7063 34.9753C66.7641 35.1885 67.6104 36.4681 69.9376 38.3875C63.1675 39.2406 57.8783 40.3069 52.5892 40.5201C38.6259 40.9467 24.8741 40.9467 10.9107 40.9467C9.21821 40.9467 7.5257 41.1599 5.83317 40.7334C0.332466 39.6671 -1.57164 36.0416 1.39028 31.1365C2.87124 28.7906 4.56377 26.658 6.46786 24.7386C13.6611 17.4876 21.0659 10.4499 28.4707 3.41224C29.7401 2.13265 31.6442 1.49285 34.183 0C34.6061 10.8765 23.8162 13.8622 21.489 22.3927C23.3931 21.9662 25.0856 21.7529 26.5666 21.3264C83.6894 5.54486 140.601 7.25099 197.3 22.606C203.224 24.0988 208.936 26.4447 214.649 28.5773C217.61 29.6437 220.149 31.9896 218.457 35.6151C216.976 39.2406 214.014 39.2406 210.629 37.7477C172.759 20.6866 132.561 18.7672 91.9404 19.407C70.7838 19.6203 50.0504 21.9662 29.5285 26.8713C26.9897 27.5111 24.4509 28.3641 21.489 29.4305Z" fill="#000"/>
+          </svg>
+          <span class="hpill-arrow-txt">Watch your brand<br>come to life</span>
         </div>
       </div>
     </div>
@@ -984,10 +963,10 @@
 <!-- ============================================================
      KPIs
 ============================================================ -->
+<!-- KPIS SECTION HIDDEN
 <section id="kpis" class="gbg">
   <div class="kpis-in">
     <div class="kpis-hd rv">
-      <div class="tag tag-lime">Results</div>
       <h2 class="st">The <span class="acc">numbers</span> don't lie.</h2>
     </div>
     <div class="kpis-grid">
@@ -1010,6 +989,7 @@
     </div>
   </div>
 </section>
+-->
 
 <!-- ============================================================
      BEFORE / AFTER
@@ -1017,7 +997,6 @@
 <section id="problem">
   <div class="prob-in">
     <div class="prob-hd rv">
-      <div class="tag tag-dark">The Problem</div>
       <h2 class="st st-dark">Most ambassador programs<br>fail. Here's why.</h2>
       <p>Without the right infrastructure, ambassadors go inactive, ROI is invisible, and teams waste time on admin.</p>
     </div>
@@ -1036,15 +1015,15 @@
           </li>
           <li class="li-bad">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            No attribution â€” you never know what's actually driving sales
+            No attribution — you never know what's actually driving sales
           </li>
           <li class="li-bad">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            Ambassadors go inactive within weeks â€” no engagement loop
+            Ambassadors go inactive within weeks — no engagement loop
           </li>
           <li class="li-bad">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            Marketing, sales, and ops siloed â€” no shared visibility
+            Marketing, sales, and ops siloed — no shared visibility
           </li>
           <li class="li-bad">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -1062,11 +1041,11 @@
         <ul class="prob-list">
           <li class="li-good">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#ccff00" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            Real-time dashboard â€” every ambassador, every action, one view
+            Real-time dashboard — every ambassador, every action, one view
           </li>
           <li class="li-good">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#ccff00" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            Full attribution from ambassador to sale â€” measurable, provable ROI
+            Full attribution from ambassador to sale — measurable, provable ROI
           </li>
           <li class="li-good">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#ccff00" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
@@ -1078,7 +1057,7 @@
           </li>
           <li class="li-good">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#ccff00" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            Automated commission calculation â€” instant, accurate, trusted
+            Automated commission calculation — instant, accurate, trusted
           </li>
         </ul>
       </div>
@@ -1087,24 +1066,23 @@
 </section>
 
 <!-- ============================================================
-     SOLUTION â€” 3-in-1
+     SOLUTION — 3-in-1
 ============================================================ -->
 <section id="solution" class="gbg">
   <div class="sol-in">
     <div class="sol-hd rv">
-      <div class="tag tag-lime">The Solution</div>
       <h2 class="st">One platform. <span class="acc">Three engines.</span></h2>
       <p class="ss">Say My Brand is a fully integrated ecosystem: a web platform for your team, a mobile app for your ambassadors, and a personalized boutique for every sale.</p>
     </div>
 
     <div class="bento">
-      <!-- Web Platform â€” span 2 -->
+      <!-- Web Platform — span 2 -->
       <div class="bc bc-span2 rv">
         <div class="bc-body">
           <div class="bc-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h3 class="bc-t">Web Platform â€” Command Center for Your Brand</h3>
+          <h3 class="bc-t">Web Platform — Command Center for Your Brand</h3>
           <p class="bc-d">Recruit, manage, and analyze your entire ambassador network from one dashboard. Create campaigns, automate commissions, and get real-time insights into what's driving revenue.</p>
         </div>
         <div class="bc-img">
@@ -1118,7 +1096,7 @@
           <div class="bc-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
           </div>
-          <h3 class="bc-t">Mobile App â€” Your Brand in Every Pocket</h3>
+          <h3 class="bc-t">Mobile App — Your Brand in Every Pocket</h3>
           <p class="bc-d">Ambassadors access their dashboard, track commissions, and promote your products from a beautiful, fully-branded iOS &amp; Android app.</p>
         </div>
         <div class="bc-img" style="overflow:hidden;max-height:280px;">
@@ -1126,13 +1104,13 @@
         </div>
       </div>
 
-      <!-- Ambassador Boutique â€” span 2 -->
+      <!-- Ambassador Boutique — span 2 -->
       <div class="bc bc-span2 rv d2">
         <div class="bc-body">
           <div class="bc-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
           </div>
-          <h3 class="bc-t">Ambassador Boutique â€” A Storefront for Every Ambassador</h3>
+          <h3 class="bc-t">Ambassador Boutique — A Storefront for Every Ambassador</h3>
           <p class="bc-d">Every ambassador gets a personalized, fully-branded boutique to share with their audience. Every purchase is attributed, every commission is tracked, every click is measured.</p>
         </div>
         <div class="bc-img" style="overflow:hidden;max-height:260px;">
@@ -1164,7 +1142,6 @@
 <section id="features">
   <div class="feat-in">
     <div class="feat-hd rv">
-      <div class="tag tag-dark">6 Key Features</div>
       <h2 class="st st-dark">Everything you need to <span class="acc">win over</span> your ambassadors.</h2>
       <p class="ss ss-dark" style="max-width:560px;margin:1rem auto 0">Six features built specifically to recruit, retain, and grow an ambassador program that drives measurable revenue.</p>
     </div>
@@ -1177,7 +1154,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <h3 class="fc-t">Experience</h3>
-          <p class="fc-d">Give every ambassador a fully branded app and a personalized storefront on your website. Your identity, your universe â€” a seamless experience that keeps ambassadors proud to represent your brand.</p>
+          <p class="fc-d">Give every ambassador a fully branded app and a personalized storefront on your website. Your identity, your universe — a seamless experience that keeps ambassadors proud to represent your brand.</p>
         </div>
         <div class="fc-img">
           <img src="assets/img1-platform.png" alt="Ambassador Experience">
@@ -1185,49 +1162,49 @@
       </div>
 
       <!-- Retention -->
-      <div class="fc rv d1">
+      <div class="fc fc-30 rv d1">
         <div class="fc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
         </div>
         <div class="fc-big">Stay.</div>
         <div class="fc-bigl">Retention</div>
-        <p class="fc-d" style="margin-top:.75rem">Custom commission structures, fixed performance bonuses, and tracking via links or promo codes â€” built to keep ambassadors active and committed long-term.</p>
+        <p class="fc-d" style="margin-top:.75rem">Custom commission structures, fixed performance bonuses, and tracking via links or promo codes — built to keep ambassadors active and committed long-term.</p>
       </div>
 
       <!-- Motivation -->
-      <div class="fc rv d1">
+      <div class="fc fc-25 rv d1">
         <div class="fc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
         <h3 class="fc-t">Motivation</h3>
-        <p class="fc-d">Flexible commission tiers, product seeding, and exclusive event invitations. Give ambassadors real reasons to act â€” and the rewards to show for it.</p>
+        <p class="fc-d">Flexible commission tiers, product seeding, and exclusive event invitations. Give ambassadors real reasons to act — and the rewards to show for it.</p>
       </div>
 
       <!-- Simplicity -->
-      <div class="fc rv d2">
+      <div class="fc fc-25 rv d2">
         <div class="fc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <h3 class="fc-t">Simplicity</h3>
-        <p class="fc-d">An intuitive app, a Chrome extension for effortless content sharing, and a wide feature set that's easy for any ambassador to master â€” no training required.</p>
+        <p class="fc-d">An intuitive app, a Chrome extension for effortless content sharing, and a wide feature set that's easy for any ambassador to master — no training required.</p>
       </div>
 
       <!-- Segmentation -->
-      <div class="fc rv d2">
+      <div class="fc fc-25 rv d2">
         <div class="fc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
         </div>
         <h3 class="fc-t">Segmentation</h3>
-        <p class="fc-d">Create unlimited ambassador segments and send targeted push notifications or campaigns to exactly the right group â€” at the right moment.</p>
+        <p class="fc-d">Create unlimited ambassador segments and send targeted push notifications or campaigns to exactly the right group — at the right moment.</p>
       </div>
 
       <!-- Transparence -->
-      <div class="fc rv d3">
+      <div class="fc fc-25 rv d3">
         <div class="fc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         <h3 class="fc-t">Transparence</h3>
-        <p class="fc-d">Detailed analytics on clicks, sales, revenue, and bonuses. One-click payment requests and full invoice history â€” complete transparency builds trust on both sides.</p>
+        <p class="fc-d">Detailed analytics on clicks, sales, revenue, and bonuses. One-click payment requests and full invoice history — complete transparency builds trust on both sides.</p>
       </div>
     </div>
   </div>
@@ -1239,59 +1216,7 @@
 <section id="app">
   <div class="app-in">
 
-    <!-- Text column -->
-    <div class="app-txt">
-      <div class="tag tag-dark rv">Mobile App</div>
-      <h2 class="st st-dark rv d1">Your brand in every<br><span class="acc">ambassador's</span> pocket.</h2>
-      <p class="ss ss-dark rv d2">A fully branded iOS &amp; Android app that turns every ambassador into an active, informed, and motivated brand advocate â€” from their smartphone.</p>
-
-      <div class="app-pts">
-        <div class="apt rv d1">
-          <div class="apt-n">01</div>
-          <div class="apt-t">
-            <h4>Live Commission Dashboard</h4>
-            <p>Ambassadors see their earnings in real time â€” every sale, every commission, every pending payment.</p>
-          </div>
-        </div>
-        <div class="apt rv d2">
-          <div class="apt-n">02</div>
-          <div class="apt-t">
-            <h4>Mission Center</h4>
-            <p>Receive campaigns, complete actions, unlock rewards â€” gamification that drives consistent activity.</p>
-          </div>
-        </div>
-        <div class="apt rv d3">
-          <div class="apt-n">03</div>
-          <div class="apt-t">
-            <h4>Personal Boutique Access</h4>
-            <p>Share boutique links directly from the app. Every click and purchase attributed automatically.</p>
-          </div>
-        </div>
-        <div class="apt rv d4">
-          <div class="apt-n">04</div>
-          <div class="apt-t">
-            <h4>100% Your Brand Identity</h4>
-            <p>Your logo, your colors, your name. Ambassadors live inside your universe â€” not ours.</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top:2.75rem" class="rv d4">
-        <a href="mailto:contact@saymybrand.com" class="btn btn-ghost-dark btn-lg">Get a Demo of the App</a>
-      </div>
-    </div>
-
-    <!-- Image column -->
-    <div class="app-img-wrap rv d2">
-      <div class="app-img-frame">
-        <img src="assets/img-app-mobile-1.png" alt="Say My Brand Ambassador App">
-      </div>
-      <div class="app-glass">
-        <div class="app-glass-stat">100%</div>
-        <div class="app-glass-lbl">Your brand â€” fully white-label</div>
-      </div>
-    </div>
-
+    <img src="assets/img-app-mobile-1.png" alt="Say My Brand Ambassador App">
   </div>
 </section>
 
@@ -1301,9 +1226,8 @@
 <section id="platform">
   <div class="plat-in">
     <div class="plat-hd rv">
-      <div class="tag tag-dark">Platform</div>
       <h2 class="st st-dark">A platform built for <span class="acc">serious</span> brands.</h2>
-      <p class="ss ss-dark" style="max-width:540px;margin:1rem auto 0">Explore the core modules that power your ambassador program â€” from campaign creation to commission payouts.</p>
+      <p class="ss ss-dark" style="max-width:540px;margin:1rem auto 0">Explore the core modules that power your ambassador program — from campaign creation to commission payouts.</p>
     </div>
 
     <div class="plat-tabs rv d1">
@@ -1311,6 +1235,7 @@
       <button class="tb" data-tab="analytics">Analytics</button>
       <button class="tb" data-tab="commissions">Commissions</button>
       <button class="tb" data-tab="ambassadors">Ambassadors</button>
+      <button class="tb" data-tab="tour">Tour</button>
     </div>
 
     <div class="rv d2">
@@ -1326,6 +1251,11 @@
       <div class="tab-p" id="tab-ambassadors">
         <img src="assets/img4-platform.png" alt="Ambassador Management">
       </div>
+      <div class="tab-p" id="tab-tour">
+        <video autoplay muted loop playsinline style="width:100%;display:block">
+          <source src="assets/hero-video.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
 
     <div class="plat-cta rv d3">
@@ -1340,14 +1270,13 @@
 <section id="integrations" class="gbg">
   <div class="int-in">
     <div class="int-hd rv">
-      <div class="tag tag-lime">Integrations</div>
       <h2 class="st">Works with the tools<br>your brand <span class="acc">already uses.</span></h2>
-      <p class="ss" style="max-width:520px;margin:1rem auto 0">Say My Brand connects seamlessly to your e-commerce stack, social channels, and payment infrastructure â€” no custom dev required.</p>
+      <p class="ss" style="max-width:520px;margin:1rem auto 0">Say My Brand connects seamlessly to your e-commerce stack, social channels, and payment infrastructure — no custom dev required.</p>
     </div>
 
     <div class="int-scroll-wrap rv d1">
 
-      <!-- Row 1: E-commerce & Payments â€” scrolls left -->
+      <!-- Row 1: E-commerce & Payments — scrolls left -->
       <div class="int-scroll-row int-scroll-row-1">
         <!-- set 1 -->
         <div class="int-icon"><img src="https://cdn.simpleicons.org/shopify" alt="Shopify"></div>
@@ -1373,7 +1302,7 @@
         <div class="int-icon"><img src="https://cdn.simpleicons.org/wix" alt="Wix"></div>
         <div class="int-icon"><img src="https://cdn.simpleicons.org/stripe" alt="Stripe"></div>
         <div class="int-icon"><img src="https://cdn.simpleicons.org/paypal" alt="PayPal"></div>
-        <!-- set 4 â€” duplicate for seamless loop -->
+        <!-- set 4 — duplicate for seamless loop -->
         <div class="int-icon"><img src="https://cdn.simpleicons.org/shopify" alt="Shopify"></div>
         <div class="int-icon"><img src="https://cdn.simpleicons.org/woocommerce" alt="WooCommerce"></div>
         <div class="int-icon"><img src="https://cdn.simpleicons.org/prestashop" alt="PrestaShop"></div>
@@ -1383,7 +1312,7 @@
         <div class="int-icon"><img src="https://cdn.simpleicons.org/paypal" alt="PayPal"></div>
       </div>
 
-      <!-- Row 2: Social & Ambassador Channels â€” scrolls right -->
+      <!-- Row 2: Social & Ambassador Channels — scrolls right -->
       <div class="int-scroll-row int-scroll-row-2">
         <!-- set 1 -->
         <div class="int-icon"><img src="https://cdn.simpleicons.org/instagram" alt="Instagram"></div>
@@ -1409,7 +1338,7 @@
         <div class="int-icon"><img src="https://cdn.simpleicons.org/pinterest" alt="Pinterest"></div>
         <div class="int-icon"><img src="https://cdn.simpleicons.org/x" alt="X (Twitter)"></div>
         <div class="int-icon"><img src="https://cdn.simpleicons.org/snapchat" alt="Snapchat"></div>
-        <!-- set 4 â€” duplicate for seamless loop -->
+        <!-- set 4 — duplicate for seamless loop -->
         <div class="int-icon"><img src="https://cdn.simpleicons.org/instagram" alt="Instagram"></div>
         <div class="int-icon"><img src="https://cdn.simpleicons.org/tiktok" alt="TikTok"></div>
         <div class="int-icon"><img src="https://cdn.simpleicons.org/youtube" alt="YouTube"></div>
@@ -1426,7 +1355,7 @@
     </div>
 
     <div class="int-note rv d2">
-      Don't see your stack? <a href="mailto:contact@saymybrand.com">Contact us</a> â€” we integrate via API with any platform.
+      Don't see your stack? <a href="mailto:contact@saymybrand.com">Contact us</a> — we integrate via API with any platform.
     </div>
   </div>
 </section>
@@ -1437,7 +1366,6 @@
 <section id="testi" class="gbg">
   <div class="tes-in">
     <div class="tes-hd rv">
-      <div class="tag tag-lime">Social Proof</div>
       <h2 class="st">Brands that chose to <span class="acc">grow differently.</span></h2>
     </div>
 
@@ -1465,7 +1393,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p class="tc-q">"The ambassador boutique feature doubled our conversion rate in the first month. Our ambassadors love having their own branded storefront â€” it makes sharing so much more compelling."</p>
+        <p class="tc-q">"The ambassador boutique feature doubled our conversion rate in the first month. Our ambassadors love having their own branded storefront — it makes sharing so much more compelling."</p>
         <div class="tc-auth">
           <div class="tc-av">ML</div>
           <div><div class="tc-n">Marc L.</div><div class="tc-r">E-commerce Manager, Cosmetics Brand</div></div>
@@ -1480,7 +1408,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p class="tc-q">"Finally a platform that both my marketing team and my ambassadors love. Onboarding was fast, support is excellent, and the results speak for themselves â€” 3Ã— ROI in our first quarter."</p>
+        <p class="tc-q">"Finally a platform that both my marketing team and my ambassadors love. Onboarding was fast, support is excellent, and the results speak for themselves — 3Ã— ROI in our first quarter."</p>
         <div class="tc-auth">
           <div class="tc-av">NT</div>
           <div><div class="tc-n">Nadia T.</div><div class="tc-r">Brand Manager, Lifestyle Brand</div></div>
@@ -1496,7 +1424,6 @@
 <section id="faq">
   <div class="faq-in">
     <div class="faq-hd rv">
-      <div class="tag tag-dark">FAQ</div>
       <h2 class="st st-dark">Common <span class="acc">questions,</span><br>honest answers.</h2>
     </div>
 
@@ -1508,7 +1435,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </span>
         </button>
-        <div class="fq-a"><div class="fq-a-inner">Most brands are live within a few days. Our onboarding team handles the technical setup â€” branded app configuration, storefront integration, and ambassador import â€” so your team can focus on strategy, not logistics.</div></div>
+        <div class="fq-a"><div class="fq-a-inner">Most brands are live within a few days. Our onboarding team handles the technical setup — branded app configuration, storefront integration, and ambassador import — so your team can focus on strategy, not logistics.</div></div>
       </div>
 
       <div class="fq rv d1">
@@ -1518,7 +1445,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </span>
         </button>
-        <div class="fq-a"><div class="fq-a-inner">Yes. The ambassador app and the storefront are 100% white-label. Your logo, your colors, your name â€” ambassadors interact with your brand, not ours. This is a core part of the Experience feature.</div></div>
+        <div class="fq-a"><div class="fq-a-inner">Yes. The ambassador app and the storefront are 100% white-label. Your logo, your colors, your name — ambassadors interact with your brand, not ours. This is a core part of the Experience feature.</div></div>
       </div>
 
       <div class="fq rv d1">
@@ -1528,7 +1455,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </span>
         </button>
-        <div class="fq-a"><div class="fq-a-inner">Each ambassador gets a unique tracking link and/or promo code. Every click and purchase is attributed automatically. You can set fixed fees, percentage-based commissions, or hybrid structures â€” and ambassadors can request payment in one click.</div></div>
+        <div class="fq-a"><div class="fq-a-inner">Each ambassador gets a unique tracking link and/or promo code. Every click and purchase is attributed automatically. You can set fixed fees, percentage-based commissions, or hybrid structures — and ambassadors can request payment in one click.</div></div>
       </div>
 
       <div class="fq rv d2">
@@ -1558,7 +1485,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </span>
         </button>
-        <div class="fq-a"><div class="fq-a-inner">Absolutely. Book a personalized demo and we'll walk you through the platform live â€” showing how it fits your specific ambassador program, team size, and e-commerce setup. No commitment required.</div></div>
+        <div class="fq-a"><div class="fq-a-inner">Absolutely. Book a personalized demo and we'll walk you through the platform live — showing how it fits your specific ambassador program, team size, and e-commerce setup. No commitment required.</div></div>
       </div>
     </div>
 
@@ -1574,7 +1501,6 @@
 <section id="pricing" class="gbg">
   <div class="pr-in">
     <div class="pr-hd rv">
-      <div class="tag tag-lime">Pricing</div>
       <h2 class="st">A plan for every <span class="acc">stage</span> of growth.</h2>
       <p class="ss" style="max-width:540px;margin:1rem auto 0">From emerging brands to global programs. Contact us for tailored pricing that fits your ambassador network.</p>
     </div>
@@ -1641,7 +1567,6 @@
 <section id="cta">
   <div class="cta-glow"></div>
   <div class="cta-in">
-    <div class="tag tag-lime rv" style="margin:0 auto 1.5rem">Ready?</div>
     <h2 class="cta-h rv d1">
       Turn your community<br>into a <span class="acc">sales force.</span>
     </h2>
@@ -1727,15 +1652,6 @@
 
 </div><!-- /.pw -->
 
-<!-- â”€â”€ Video Lightbox Modal â”€â”€ -->
-<div class="vid-modal" id="vid-modal" role="dialog" aria-modal="true" aria-label="Product Demo Video">
-  <div class="vid-modal-inner">
-    <button class="vid-close" id="vid-close" aria-label="Close video">&times;</button>
-    <video id="vid-modal-player" controls playsinline>
-      <source src="assets/hero-video.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
 
 <script>
   // Scroll progress
@@ -1871,33 +1787,38 @@
     setTimeout(() => { deleting = true; tick(); }, 2200);
   })();
 
-  // â”€â”€ Video Lightbox â”€â”€
+  // Live feed — both hpills sync together
   (function () {
-    const modal   = document.getElementById('vid-modal');
-    const player  = document.getElementById('vid-modal-player');
-    const trigger = document.getElementById('hero-card-trigger');
-    const closeBtn= document.getElementById('vid-close');
-    if (!modal || !player || !trigger) return;
-
-    function openModal() {
-      modal.classList.add('open');
-      player.currentTime = 0;
-      player.play();
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() {
-      modal.classList.remove('open');
-      player.pause();
-      player.currentTime = 0;
-      document.body.style.overflow = '';
-    }
-
-    trigger.addEventListener('click', openModal);
-    closeBtn.addEventListener('click', function(e){ e.stopPropagation(); closeModal(); });
-    modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+    const feeds = [
+      { el: document.getElementById('live-feed'), val: document.getElementById('live-val'), lbl: document.getElementById('live-lbl'), msgs: [
+        { v: '$420',   l: 'sold just now' },       { v: '$730',   l: 'earned this hour' },
+        { v: '23',     l: 'orders placed' },        { v: '12',     l: 'new customers' },
+        { v: '$1.2K',  l: 'in commissions' },       { v: '8',      l: 'ambassadors activated' },
+        { v: '$560',   l: 'from one link' },         { v: '45',     l: 'products sold today' },
+      ], i: 0 },
+      { el: document.getElementById('live-feed-1'), val: document.getElementById('live-val-1'), lbl: document.getElementById('live-lbl-1'), msgs: [
+        { v: '3.2x',   l: 'avg engagement lift' },  { v: '84%',    l: 'repeat purchase rate' },
+        { v: '$2.8K',  l: 'earned per ambassador' },{ v: '67%',    l: 'faster campaign launch' },
+        { v: '93%',    l: 'ambassador satisfaction'},{ v: '41%',    l: 'lower CAC vs ads' },
+        { v: '5.1',    l: 'stars avg rating' },           { v: '150+',   l: 'countries reached' },
+      ], i: 0 },
+    ].filter(f => f.el && f.val && f.lbl);
+    if (!feeds.length) return;
+    setInterval(() => {
+      feeds.forEach(f => f.el.style.opacity = '0');
+      setTimeout(() => {
+        feeds.forEach(f => {
+          f.i = (f.i + 1) % f.msgs.length;
+          f.val.textContent = f.msgs[f.i].v;
+          f.lbl.textContent = f.msgs[f.i].l;
+          f.el.style.opacity = '1';
+        });
+      }, 350);
+    }, 2200);
   })();
 </script>
 </body>
 </html>
+
+
 
